@@ -30,5 +30,37 @@ app.get('/todo-list', async (req, res) => {
   }
 });
 
+app.post('/todo-list', async (req, res) => {
+  try {
+    const { todo } = req.body;
+    const newTodo = await Todo.create({ todo });
+    res.status(201).json(newTodo);
+  } catch (err) {
+    console.error(err); 
+    res.status(500).json({ error: err.message });
+  }
+});
+app.delete('/todo-list/:id', async (req, res) => {
+  try {
+    await Todo.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: 'Deleted' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.put('/todo-list/:id', async (req, res) => {
+  try {
+    const updated = await Todo.findByIdAndUpdate(
+      req.params.id,
+      { todo: req.body.todo },
+      { new: true }
+    );
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 app.listen(port, () => console.log("server running 3000-port"));

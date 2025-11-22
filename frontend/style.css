@@ -1,0 +1,75 @@
+body {
+
+    background-color: rgb(36, 180, 202);
+    min-width: 250px;
+    margin: 0px;
+}
+
+.header {
+    margin: 30px;
+    display: block;
+
+}
+
+.header input {
+    margin: 20px 0px;
+    height: 32px;
+    width: 1000px;
+    border-radius: 30px;
+    font-size: 15px;
+    padding: 5px;
+
+
+}
+
+.mybutton {
+    height: 40px;
+    border-radius: 30px;
+    width: 65px;
+    cursor: pointer;
+    padding: 10pxpx;
+    font-size: 15px;
+
+}
+
+.mybutton :hover {
+    background-color: #ae62bd;
+}
+
+.header h1 {
+    text-align: center;
+    background-color: blue;
+    padding: 20px;
+    font-size: 40px;
+}
+
+ul {
+    cursor: pointer;
+    position: relative;
+    padding: 15px 10px 15px 50px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul li:hover {
+    background: #ddd;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px; 
+
+
+}
+
